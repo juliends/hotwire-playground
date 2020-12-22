@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Books list</h1>
+  <div class="d-flex w-75 flex-wrap">
+    <% @posts.each do |post| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <%= link_to 'Read content', post_path(post), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>  
+  </div>
+</div>
