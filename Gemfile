@@ -6,6 +6,7 @@ ruby '2.6.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'faker'
 gem 'simple_form'
+gem 'turbo-rails'
 
 gem 'rails', '~> 6.1.0'
 # Use sqlite3 as the database for Active Record
