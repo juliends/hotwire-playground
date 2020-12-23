@@ -1,6 +1,7 @@
 <div class="container mt-5">
-  <h1 class="mb-4">Posts list</h1>
   <%= turbo_stream_from 'posts' %>
+  <h1 class="mb-4">Posts list</h1>
+
   <%= turbo_frame_tag 'posts', class: 'd-flex w-75 flex-wrap' do %>
     <% @posts.each do |post| %>
       <%= render 'post', post: post %>
