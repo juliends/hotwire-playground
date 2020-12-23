@@ -1,9 +1,11 @@
-<div class="card mr-3 mb-2" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <div class="d-flex justify-content-between">
-      <%= link_to 'Read content', post_path(post), class: 'card-link' %>
-      <%= link_to 'delete', post_path(post), method: :delete, class: 'text-danger' %>
+<%= turbo_frame_tag dom_id(post) do %>
+  <div class="card mr-3 mb-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <div class="d-flex justify-content-between">
+        <%= link_to 'Read content', post_path(post), class: 'card-link' %>
+        <%= link_to 'delete', post_path(post), method: :delete, class: 'text-danger' %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

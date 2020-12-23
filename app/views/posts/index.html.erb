@@ -3,9 +3,7 @@
   <%= turbo_stream_from 'posts' %>
   <%= turbo_frame_tag 'posts', class: 'd-flex w-75 flex-wrap' do %>
     <% @posts.each do |post| %>
-      <%= turbo_frame_tag dom_id(post) do %>
-        <%= render 'post_item', post: post %>
-      <% end %>
+      <%= render 'post_item', post: post %>
     <% end %>  
   <% end %>  
   <!-- Lazy loaded new form -->
