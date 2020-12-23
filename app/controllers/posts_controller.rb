@@ -14,9 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
-      respond_to do |format|
-        format.turbo_stream
-      end
+      redirect_to posts_path
     else
       render :new
     end
