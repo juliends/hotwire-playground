@@ -1,3 +1,8 @@
 <%= turbo_frame_tag dom_id(@post) do %>
-  <%= render 'post', post: @post %>
+  <div class="card mr-3 mb-2" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-text"><%= @post.content %></p>
+      <%= link_to 'back', posts_path, class: 'card-link' %>
+    </div>
+  </div>
 <% end %>
