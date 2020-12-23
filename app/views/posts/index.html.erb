@@ -3,13 +3,10 @@
   <%= turbo_stream_from 'posts' %>
   <%= turbo_frame_tag 'posts', class: 'd-flex w-75 flex-wrap' do %>
     <% @posts.each do |post| %>
-      <%= render 'post_item', post: post %>
+      <%= render 'post', post: post %>
     <% end %>  
   <% end %>  
-  <!-- Lazy loaded new form -->
-  <%#= turbo_frame_tag "new_post", src: new_post_path(@post), target: '_top' %>
-  
-  <!-- fetch the new form on click -->
+
   <%= turbo_frame_tag "new_post" do %>
     <%= link_to 'Add a new post', new_post_path(@post), class: 'btn btn-primary mt-5' %>
   <% end %>
