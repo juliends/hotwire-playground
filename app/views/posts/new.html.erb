@@ -1,8 +1,4 @@
-<%= turbo_frame_tag "new_post" do %>
+<%= turbo_frame_tag "new_post", class: 'mb-5' do %>
   <h5 class='mt-5'>New post</h5>
-  <%= simple_form_for @post, html: { class: 'w-50 mt-3' } do |f| %>
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+  <%= render 'form', post: @post %>
 <% end %>

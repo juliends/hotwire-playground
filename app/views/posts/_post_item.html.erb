@@ -4,7 +4,7 @@
       <h5 class="card-title"><%= post.title %></h5>
       <div class="d-flex justify-content-between">
         <%= link_to 'read', post_path(post), class: 'card-link', data: { turbo_frame: 'show' } %>
-        <%= link_to 'edit', edit_post_path(post), class: 'card-link text-secondary', data: { turbo_frame: 'show' } %>
+        <%= link_to 'edit', edit_post_path(post), class: 'card-link text-secondary' %>
         <%= link_to 'delete', post_path(post), method: :delete, class: 'text-danger' %>
       </div>
     </div>
