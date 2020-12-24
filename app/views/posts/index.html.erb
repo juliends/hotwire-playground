@@ -2,11 +2,15 @@
   <%= turbo_stream_from 'posts' %>
   <h1 class="mb-4">Posts list</h1>
 
-  <%= turbo_frame_tag 'posts', class: 'd-flex w-75 flex-wrap' do %>
-    <% @posts.each do |post| %>
-      <%= render 'post', post: post %>
+  <div class="d-flex">
+    <%= turbo_frame_tag 'posts', class: 'd-flex w-50 flex-wrap' do %>
+      <% @posts.each do |post| %>
+        <%= render 'post', post: post %>
+      <% end %>
     <% end %>  
-  <% end %>  
+
+    <%= turbo_frame_tag 'show', class: 'w-50' %>
+  </div>
 
   <%= turbo_frame_tag "new_post" do %>
     <%= link_to 'Add a new post', new_post_path(@post), class: 'btn btn-primary mt-5' %>
